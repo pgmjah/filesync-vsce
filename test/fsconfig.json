@@ -1,0 +1,18 @@
+{
+	"configs":
+	[
+		{
+			"name":"filesync_test",
+			"enabled":true,
+			"rename":[],
+			"git":
+			[
+				{"src":"http://wfbucket.ibi.com:7990/scm/~jh00990/ibxpackager.git","dest":"./src"}
+			],
+			"sync":
+			[
+				{"src":"./src", "dest":"./dest","bidir":true}
+			]
+		}
+	]
+}

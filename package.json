@@ -1,0 +1,84 @@
+{
+	"version": "1.0.18",
+	"publisher": "pgmjah",
+	"name": "filesync",
+	"displayName": "FileSync",
+	"description": "Synchronize files between directories",
+	"author": {
+		"name": "pgmjah",
+		"email": "pgmjah@gmail.com"
+	},
+	"license": "SEE LICENSE IN license.txt",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pgmjah/filesync.git"
+	},
+	"main": "extension.js",
+	"keywords": [
+		"File Synchronization",
+		"File Management",
+		"File Copying",
+		"File Deployment"
+	],
+	"files": [
+		"extension.js",
+		"filesync.js",
+		"fsconfig_default.json"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.39.0",
+		"eslint": "^6.6.0",
+		"glob": "^7.1.6",
+		"mocha": "^6.2.2",
+		"pgmjah-filesync": "file:../filesync_",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.2"
+	},
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "filesync.createConfigFile",
+				"title": "FileSync: Create a fsconfig.json file."
+			},
+			{
+				"command": "filesync.toggleSyncs",
+				"title": "FileSync: Toggle activation of synhronizers"
+			},
+			{
+				"command": "filesync.startAllSyncs",
+				"title": "FileSync: Start all synchronizing files/directories."
+			},
+			{
+				"command": "filesync.stopAllSyncs",
+				"title": "FileSync: Stop all synchronizing files/directories."
+			}
+		],
+		"configuration": [
+			{
+				"title": "FileSync",
+				"properties": {
+					"filesync.showStatusBarInfo": {
+						"scope": "resource",
+						"type": "boolean",
+						"default": "true",
+						"description": "Show FileSync activity in the status bar"
+					}
+				}
+			}
+		]
+	}
+}
