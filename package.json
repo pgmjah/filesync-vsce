@@ -25,7 +25,9 @@
 		"filesync.js",
 		"fsconfig_default.json"
 	],
-	"dependencies": {},
+	"dependencies": {
+		"pgmjah-filesync": "pgmjah-filesync"
+	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.7",
@@ -34,7 +36,6 @@
 		"eslint": "^6.6.0",
 		"glob": "^7.1.6",
 		"mocha": "^6.2.2",
-		"pgmjah-filesync": "file:../filesync_",
 		"typescript": "^3.6.4",
 		"vscode-test": "^1.2.2"
 	},

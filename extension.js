@@ -124,7 +124,7 @@ class fsExtension extends EventEmitter
 			//turn on/off the syncs.
 			items.map((item)=>
 			{
-				(selItems.indexOf(item) != -1) ? item.config._fsync.startSyncs(item.sync) : item.config._fsync.stopSyncs(item.sync);
+				(selItems.indexOf(item) != -1) ? item.config.fsync.startSyncs(item.sync) : item.config.fsync.stopSyncs(item.sync);
 			});
 		});
 	}
@@ -154,7 +154,7 @@ class fsExtension extends EventEmitter
 				var cfgFile = this._configFiles[cfgPath];
 				for(let i = 0; i < cfgFile.configs.length; ++i)
 				{
-					let fsync = cfgFile.configs[i]._fsync;
+					let fsync = cfgFile.configs[i].fsync;
 					if(fsync)
 						start ? fsync.startSyncs() : fsync.stopSyncs();
 				}
@@ -190,12 +190,12 @@ class fsExtension extends EventEmitter
 			// 		let cfgBlock = configs[idx];
 			// 		cfgBlock.cfgFilePath = paths.parse(filePath).dir;
 
-			// 		if(cfgBlock._fsync)
-			// 			cfgBlock._fsync.startSyncs();
+			// 		if(cfgBlock.fsync)
+			// 			cfgBlock.fsync.startSyncs();
 			// 		else
 			// 		if(cfgBlock && cfgBlock.enabled)
 			// 		{
-			// 			let sync = cfgBlock._fsync = new fsync.fileSync(cfgBlock);
+			// 			let sync = cfgBlock.fsync = new fsync.fileSync(cfgBlock);
 			// 			sync.on("fsync", this._onFileSyncLog.bind(this));
 			// 			await sync.start();
 			// 		}
