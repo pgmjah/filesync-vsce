@@ -82,6 +82,9 @@ The FileSync config file is a json object with the following layout:
 
 ## Release Notes
 
+## 1.0.19
+* Updated to use pgmjah-filesync npm package, instead of embedding that code directly.
+
 ## 1.0.18
 * Relative paths should be valid anywhere in config file.
 
