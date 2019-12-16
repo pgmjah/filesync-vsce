@@ -21,6 +21,8 @@ class fsExtension extends EventEmitter
 
 		//keep an eye on various events.
 		this.on("fsync", this._onFileSyncLog.bind(this));
+		process.on("fsync_log", this._onFileSyncLog.bind(this));
+		
 		vscode.workspace.onDidChangeWorkspaceFolders(this._onWorkspaceFolderChange.bind(this));
 		vscode.workspace.onDidChangeConfiguration(this._onConfigChange.bind(this));
 
@@ -68,22 +70,10 @@ class fsExtension extends EventEmitter
 	{
 		vscode.window.showWorkspaceFolderPick({"placeHolder":"Where to save fsconfig.json file"}).then(function(pathInfo)
 		{
-			let ext = vscode.extensions.getExtension("pgmjah.filesync");
-			let uri = pathInfo.uri;
-			let destPath = `${uri.fsPath}\\fsconfig.json`;
-			fs.copyFile(`${ext.extensionPath}\\fsconfig_default.json`, destPath, fs.constants.COPYFILE_EXCL, function(err)
-			{
-				if(err)
-				{
-					this.emit("fsync", "create config file", "failed", err);
-					vscode.window.showErrorMessage(`FileSync: failed to create ${destPath} => ${err.message}`);
-				}
-				else
-				{
-					this.emit("fsync", "create config file", "created", `config file created => ${destPath}`);
-					vscode.window.showInformationMessage(`FileSync: config file created - ${destPath}`);
-				}
-			}.bind(this));
+			if(!pathInfo)
+				return;
+			let destPath = `${pathInfo.uri.fsPath}\\fsconfig.json`;
+			fsync.fileSync.createDefaultConfigFile(destPath);
 		}.bind(this));
 	}
 	toggleFileSyncs()

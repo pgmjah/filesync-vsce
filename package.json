@@ -25,7 +25,9 @@
 		"filesync.js",
 		"fsconfig_default.json"
 	],
-	"dependencies": {},
+	"dependencies": {
+		"pgmjah-filesync": "^1.0.5"
+	},
 	"xdevDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.7",
