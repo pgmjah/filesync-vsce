@@ -82,6 +82,9 @@ The FileSync config file is a json object with the following layout:
 
 ## Release Notes
 
+## 1.0.20
+* extension now uses static fileSync functions to read config file and also create default fsconfig.json file.
+
 ## 1.0.19
 * Updated to use pgmjah-filesync npm package, instead of embedding that code directly.
 

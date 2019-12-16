@@ -1,5 +1,5 @@
 {
-	"version": "1.0.20",
+	"version": "1.0.21",
 	"publisher": "pgmjah",
 	"name": "filesync",
 	"displayName": "FileSync",
@@ -26,7 +26,7 @@
 		"fsconfig_default.json"
 	],
 	"dependencies": {
-		"pgmjah-filesync": "^1.0.5"
+		"pgmjah-filesync": "^1.0.6"
 	},
 	"xdevDependencies": {
 		"@types/glob": "^7.1.1",
