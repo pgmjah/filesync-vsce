@@ -176,33 +176,6 @@ class fsExtension extends EventEmitter
 			{
 				cfgFile.configs[cfg].fsync.on("fsync_log", this._onFileSyncLog.bind(this));
 			}
-
-			// if(!cfgFile.configs)
-			// {
-			// 	this.emit("fsync", "cfgload", "Bad fsconfig.json file", filePath);
-			// 	vscode.window.showErrorMessage(`FileSync: no 'configs' in fsconfig.js file => ${fsync.fileSync.fmtPath(filePath)}`);
-			// }
-			// else
-			// {
-			// 	this.emit("fsync", "cfgload", "starting...", filePath);
-			// 	async function startSync(configs, idx)
-			// 	{
-			// 		let cfgBlock = configs[idx];
-			// 		cfgBlock.cfgFilePath = paths.parse(filePath).dir;
-
-			// 		if(cfgBlock.fsync)
-			// 			cfgBlock.fsync.startSyncs();
-			// 		else
-			// 		if(cfgBlock && cfgBlock.enabled)
-			// 		{
-			// 			let sync = cfgBlock.fsync = new fsync.fileSync(cfgBlock);
-			// 			sync.on("fsync", this._onFileSyncLog.bind(this));
-			// 			await sync.start();
-			// 		}
-			// 		(configs.length > ++idx) ? startSync.call(this, configs, idx) : this.emit("fsync", "cfgload", "running", filePath);
-			// 	}
-			// 	startSync.call(this, cfgFile.configs, 0);
-			// }
 		});
 	}
 	_onFileSyncLog(type, action, data)
