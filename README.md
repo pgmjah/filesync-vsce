@@ -82,6 +82,12 @@ The FileSync config file is a json object with the following layout:
 
 ## Release Notes
 
+## 1.0.22
+* packaging update.
+
+## 1.0.21
+* packaging update.
+
 ## 1.0.20
 * extension now uses static fileSync functions to read config file and also create default fsconfig.json file.
 

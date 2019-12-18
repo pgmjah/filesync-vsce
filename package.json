@@ -1,5 +1,5 @@
 {
-	"version": "1.0.21",
+	"version": "1.0.22",
 	"publisher": "pgmjah",
 	"name": "filesync",
 	"displayName": "FileSync",
@@ -11,7 +11,7 @@
 	"license": "SEE LICENSE IN license.txt",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pgmjah/filesync.git"
+		"url": "https://github.com/pgmjah/filesync-vsce.git"
 	},
 	"main": "extension.js",
 	"keywords": [
