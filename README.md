@@ -76,6 +76,7 @@ The FileSync config file is a json object with the following layout:
 * sync - array of objects specifying what directories you want synchronized where (can be a single object, if just one).
   * src - the source directory to syncronize.
   * dest - the destination directory to keep synchronized.
+  * files - array of file names you want to sync (can be a single object, if just one).  If not present will sync all files in src.
   * ignore - array of relative paths to src to be ignored when syncing (can be a single object, if just one).
   * bidir - bidirectional synchronization...that is, files will be removed from destination if they don't exist in the source.
 
@@ -86,6 +87,9 @@ The FileSync config file is a json object with the following layout:
 * FileSync: Stop synchronizing files/directories" - stop all the currently running FileSyncs.
 
 ## Release Notes
+
+## 1.0.24
+* Updated packaging/readme.
 
 ## 1.0.23
 * Added files section to sync blocks.  If included, will sync only files specified.
