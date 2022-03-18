@@ -47,6 +47,11 @@ The FileSync config file is a json object with the following layout:
 				{
 					"src":"c:/some/source/folder",
 					"dest":"c:/some/dest/folder",
+					"files":
+					[
+						"./syncFileOnly.ext",
+						"./child_dir/otherFileOnly.ext"
+					],
 					"ignore":
 					[
 						"folder1/relative/to/src",
@@ -81,6 +86,9 @@ The FileSync config file is a json object with the following layout:
 * FileSync: Stop synchronizing files/directories" - stop all the currently running FileSyncs.
 
 ## Release Notes
+
+## 1.0.23
+* Added files section to sync blocks.  If included, will sync only files specified.
 
 ## 1.0.22
 * packaging update.

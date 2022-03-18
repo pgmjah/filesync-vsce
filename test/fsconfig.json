@@ -7,11 +7,10 @@
 			"rename":[],
 			"git":
 			[
-				{"src":"http://wfbucket.ibi.com:7990/scm/~jh00990/ibxpackager.git","dest":"./src"}
 			],
 			"sync":
 			[
-				{"src":"./src", "dest":"./dest","bidir":true}
+				{"files":[], "src":"../../filesync/test/src", "dest":"../../filesync/test/dest","bidir":true}
 			]
 		}
 	]
